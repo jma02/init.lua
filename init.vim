@@ -13,6 +13,9 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set termguicolors
+syntax on
+set expandtab
+set nowrap
 
 
 set makeprg=g++-11\ -std=c++17\ -o\ %:r\ %\
