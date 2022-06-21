@@ -4,6 +4,7 @@ Plug 'tpope/vim-dispatch', {'branch': 'release'}
 Plug 'tpope/vim-pathogen', {'branch': 'main'}
 Plug 'vim-scripts/errormarker.vim'
 Plug 'Shatur/neovim-ayu'
+Plug 'andweeb/presence.nvim'
 call plug#end()
 colorscheme ayu-mirage
 set number
@@ -16,7 +17,13 @@ set termguicolors
 syntax on
 set expandtab
 set nowrap
-
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 
 set makeprg=g++-11\ -std=c++17\ -o\ %:r\ %\
 autocmd filetype cpp nnoremap <F9> :w <bar> Make <CR>

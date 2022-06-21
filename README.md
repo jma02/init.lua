@@ -7,4 +7,4 @@
 - CoC language server for c/c++
 
 
-- ayu-mirage colorscheme
+- Bracket autocomplete
