@@ -3,8 +3,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-dispatch', {'branch': 'release'}
 Plug 'tpope/vim-pathogen', {'branch': 'main'}
 Plug 'vim-scripts/errormarker.vim'
-Plug 'Shatur/neovim-ayu'
 Plug 'andweeb/presence.nvim'
+
+Plug 'Shatur/neovim-ayu'
+Plug 'arcticicestudio/nord-vim'
+
 call plug#end()
 colorscheme ayu-mirage
 set number
@@ -24,6 +27,8 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
+
+autocmd BufNewFile *.cpp 0r /.config/nvim/template.cpp
 
 set makeprg=g++-11\ -std=c++17\ -o\ %:r\ %\
 autocmd filetype cpp nnoremap <F9> :w <bar> Make <CR>
