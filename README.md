@@ -8,3 +8,6 @@
 
 
 - Bracket autocomplete
+
+
+- Telescope fuzzy finder
