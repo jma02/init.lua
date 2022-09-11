@@ -35,6 +35,6 @@ autocmd BufNewFile *.cpp 0r ~/.config/nvim/template.cpp
 
 set makeprg=g++-11\ -std=c++17\ -o\ %:r\ %\
 autocmd filetype cpp nnoremap <F9> :w <bar> Make <CR>
-autocmd filetype cpp nnoremap <F10> :vert terminal ./%:r<CR>
+autocmd filetype cpp nnoremap <F10> :vs<bar>:terminal ./%:r<CR>
 autocmd filetype cpp nnoremap <F11> :!./%:r<CR>
 execute pathogen#infect()
