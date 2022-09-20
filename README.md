@@ -11,3 +11,6 @@
 
 
 - Telescope fuzzy finder
+
+
+- VimTeX
