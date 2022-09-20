@@ -10,8 +10,33 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'Shatur/neovim-ayu'
 Plug 'arcticicestudio/nord-vim'
+Plug 'lervag/vimtex'
 
 call plug#end()
+filetype plugin indent on
+let g:vimtex_view_method = "skim"
+let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+let g:vimtex_view_general_options = '-r @line @pdf @tex'
+
+augroup vimtex_mac
+    autocmd!
+    autocmd User VimtexEventCompileSuccess call UpdateSkim()
+augroup END
+
+function! UpdateSkim() abort
+    let l:out = b:vimtex.out()
+    let l:src_file_path = expand('%:p')
+    let l:cmd = [g:vimtex_view_general_viewer, '-r']
+
+    if !empty(system('pgrep Skim'))
+    call extend(l:cmd, ['-g'])
+    endif
+
+    call jobstart(l:cmd + [line('.'), l:out, l:src_file_path])
+endfunction
+
+let g:vimtex_compiler_method = 'latexmk'
+
 colorscheme ayu-mirage
 set number
 set cindent
