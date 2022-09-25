@@ -59,7 +59,7 @@ inoremap {;<CR> {<CR>};<ESC>O
 autocmd BufNewFile *.cpp 0r ~/.config/nvim/template.cpp
 autocmd BufNewFile *.tex 0r ~/.config/nvim/template.tex
 
-set makeprg=g++-11\ -std=c++17\ -o\ %:r\ %\
+set makeprg=g++-12\ -std=c++17\ -o\ %:r\ %\
 autocmd filetype cpp nnoremap <F9> :w <bar> Make <CR>
 autocmd filetype cpp nnoremap <F10> :vs<bar>:terminal ./%:r<CR>
 autocmd filetype cpp nnoremap <F11> :!./%:r<CR>
