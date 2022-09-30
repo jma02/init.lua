@@ -14,3 +14,6 @@
 
 
 - VimTeX
+
+
+- Snippets
