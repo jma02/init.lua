@@ -7,9 +7,6 @@
 - CoC language server for c/c++
 
 
-- Bracket autocomplete
-
-
 - Telescope fuzzy finder
 
 
