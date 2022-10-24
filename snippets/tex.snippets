@@ -36,13 +36,39 @@ snippet disp
 	\]
 
 snippet matrix
-
 	\begin{bmatrix}
-
+	    0 & 0 & 0\\\
+	    0 & 0 & 0\\\
+	    0 & 0 & 0\\\
 	\end{bmatrix}
 
 snippet pmatrix
+	\begin{pmatrix}
+    	    0 & 0 & 0\\\
+	    0 & 0 & 0\\\
+	    0 & 0 & 0\\\
+	\begin{pmatrix}
 
-	\begin{pmatrix}
-	
-	\begin{pmatrix}
+snippet augment
+	 \makeatletter
+	 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	   \hskip -\arraycolsep
+	   \let\@ifnextchar\new@ifnextchar
+	   \array{#1}}
+	 \makeatother
+
+	 \[
+	 \begin{bmatrix}[ccc|ccc]
+	     1& -1 & -1 & 1 & 0 & 0\\\
+	     3 & -1 & 2 & 0 & 1 & 0\\\
+	     2 & 2 & 3 & 0 & 0 & 1\\\
+	   \end{bmatrix}
+	 \]
+
+snippet R
+	\mathbb{R}
+
+snippet itemize
+	\begin{itemize}
+
+	\end{itemize}
