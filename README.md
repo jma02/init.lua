@@ -20,3 +20,8 @@
 
 Install [vim-plug](https://github.com/junegunn/vim-plug), run :PlugInstall in nvim. With pip, run
 `pip install nvim`. Using Mason, install clangd, python, (or remove references to these LSPs)
+
+
+For LaTeX support, use your OS's package manager to install `latexmk`, and `texshop`.
+There is a comment in `init.vim` indicating what lines to delete or modify such that your 
+OS's native PDF viewer is loaded / a custom PDF viewer is chosen.
