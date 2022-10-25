@@ -1,10 +1,10 @@
 ### My current nvim init.vim
 
 ### Includes
-- Easy compiling of c++ files using hotkeys (Inspired by Geothermal's [vimrc](https://www.youtube.com/watch?v=VYptjn_mAak&t=637s))
+- LuaLine, nvimcmp, Mason.nvim
 
 
-- CoC language server for c/c++
+- Modular code compiling / running function
 
 
 - Telescope fuzzy finder
@@ -13,4 +13,10 @@
 - VimTeX
 
 
-- Snippets
+- Snippets (UltiSnips)
+
+### Installation
+
+
+Install (vim-plug)[https://github.com/junegunn/vim-plug], run :PlugInstall in nvim. With pip, run
+`pip install nvim`. Using Mason, install clangd, python, (or remove references to these LSPs)
