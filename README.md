@@ -18,5 +18,5 @@
 ### Installation
 
 
-Install (vim-plug)[https://github.com/junegunn/vim-plug], run :PlugInstall in nvim. With pip, run
+Install [vim-plug](https://github.com/junegunn/vim-plug), run :PlugInstall in nvim. With pip, run
 `pip install nvim`. Using Mason, install clangd, python, (or remove references to these LSPs)
