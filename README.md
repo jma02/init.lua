@@ -28,7 +28,7 @@ There is a comment in `init.vim` indicating what lines to delete or modify such 
 OS's native PDF viewer is loaded / a custom PDF viewer is chosen.
 
 
-For MacOS, you can download Skim and leave `init.vim` unchanged, or follow the above instructions.
+For MacOS, you can download [Skim](https://skim-app.sourceforge.io/) and leave `init.vim` unchanged, or follow the above instructions.
 
 
 Depending on your OS, you will need to change the `makeprg` macro to invoke the correct
