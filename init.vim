@@ -126,6 +126,7 @@ function! UpdateSkim() abort
     call jobstart(l:cmd + [line('.'), l:out, l:src_file_path])
 endfunction
 
+"
 
 let g:vimtex_compiler_method = 'latexmk'
 
