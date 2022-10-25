@@ -11,8 +11,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'Shatur/neovim-ayu'
 Plug 'arcticicestudio/nord-vim'
 Plug 'lervag/vimtex'
-Plug 'L3MON4D3/LuaSnip', {'tag': 'v<CurrentMajor>.*'}
-
+Plug 'SirVer/ultisnips'
 call plug#end()
 
 filetype plugin indent on
@@ -39,20 +38,9 @@ endfunction
 
 let g:vimtex_compiler_method = 'latexmk'
 
-" press <Tab> to expand or jump in a snippet. These can also be mapped separately
-" via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
-imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
-" -1 for jumping backwards.
-inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
-
-snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
-snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
-
-" For changing choices in choiceNodes (not strictly necessary for a basic setup).
-imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
-smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
-
-lua require("luasnip.loaders.from_snipmate").lazy_load()
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 colorscheme ayu-mirage
 set number
