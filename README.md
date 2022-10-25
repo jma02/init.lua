@@ -1,4 +1,5 @@
 ### My current nvim init.vim
+![alt text](ex.png)
 
 ### Includes
 - LuaLine, nvimcmp, Mason.nvim
