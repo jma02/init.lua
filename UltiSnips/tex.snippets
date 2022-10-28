@@ -3,22 +3,22 @@ snippet p
 endsnippet
 snippet alph
 \\begin{enumerate}[label=(\alph*).]
-
+	$0
 \\end{enumerate}
 endsnippet
 snippet align
 \\begin{align*}
-
+	$0
 \\end{align*}
 endsnippet
 snippet eq
 \\begin{equation}
-
+	$0
 \\end{equation}
 endsnippet
 
 snippet piecewise
-\\[ f(x) = \begin{cases}
+\\[ f(x)$0 = \begin{cases}
 	0 & x = 0 \\\
 	1 & x = 1 \\\
 	2 & x = 2 \\\
@@ -28,22 +28,21 @@ endsnippet
 
 snippet enum
 \\begin{enumerate}
-
+	$0
 \\end{enumerate}
 endsnippet
 
 
 snippet disp
-
 \\[
-
+	$0
 \\]
 endsnippet
 
 
 snippet matrix
 \\begin{bmatrix}
-	0 & 0 & 0\\\
+	$0 0 & 0 & 0\\\
 	0 & 0 & 0\\\
 	0 & 0 & 0\\\
 \\end{bmatrix}
@@ -52,7 +51,7 @@ endsnippet
 
 snippet pmatrix
 \\begin{pmatrix}
-	0 & 0 & 0\\\
+	$0 0 & 0 & 0\\\
 	0 & 0 & 0\\\
 	0 & 0 & 0\\\
 \\begin{pmatrix}
@@ -69,7 +68,7 @@ snippet augment
 
 \\[
 \\begin{bmatrix}[ccc|ccc]
-	1& -1 & -1 & 1 & 0 & 0\\\
+	$0 1& -1 & -1 & 1 & 0 & 0\\\
 	3 & -1 & 2 & 0 & 1 & 0\\\
 	2 & 2 & 3 & 0 & 0 & 1\\\
 \\end{bmatrix}
@@ -121,4 +120,12 @@ snippet table "Table environment" b
 	$0${5/((?<=.)c|l|r)|./(?1: & )/g}
 	\end{tabular}
 \end{table}
+endsnippet
+
+snippet abs "absolute value"
+\\lvert $0 \\rvert
+endsnippet
+
+snippet norm "norm"
+\lVert $0 \rVert
 endsnippet
