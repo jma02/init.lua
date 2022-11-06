@@ -45,7 +45,7 @@ cmp.setup({
     end,
     },
     window = {
-        completion = cmp.config.window.bordered(),
+        --completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
     },
     experimental = {
@@ -103,31 +103,6 @@ cmp.setup({
 
 EOF
 
-" change this based on OS or delete completely to change to default OS pdf viewer
-
-let g:vimtex_view_method = "skim"
-let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
-let g:vimtex_view_general_options = '-r @line @pdf @tex'
-
-augroup vimtex_mac
-    autocmd!
-    autocmd User VimtexEventCompileSuccess call UpdateSkim()
-augroup END
-
-function! UpdateSkim() abort
-    let l:out = b:vimtex.out()
-    let l:src_file_path = expand('%:p')
-    let l:cmd = [g:vimtex_view_general_viewer, '-r']
-
-    if !empty(system('pgrep Skim'))
-    call extend(l:cmd, ['-g'])
-    endif
-
-    call jobstart(l:cmd + [line('.'), l:out, l:src_file_path])
-endfunction
-
-"
-
 let g:vimtex_compiler_method = 'latexmk'
 
 let g:UltiSnipsExpandTrigger = '<tab>'
@@ -136,7 +111,7 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 colorscheme ayu-mirage
 
-set number
+set relativenumber
 set cindent
 set showmatch
 set softtabstop=4
