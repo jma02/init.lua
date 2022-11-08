@@ -24,7 +24,7 @@ Plug 'nvim-lualine/lualine.nvim'
 call plug#end()
 filetype plugin indent on
 set completeopt=menu,menuone,noselect
-
+set number
 
 lua <<EOF
 require("mason").setup()

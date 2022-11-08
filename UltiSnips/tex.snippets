@@ -133,3 +133,16 @@ endsnippet
 snippet rm "mathrm"
 \\mathrm{$0}
 endsnippet
+
+snippet graph "graph"
+
+\\begin{tikzpicture}
+\\pgfplotsset{compat=newest,compat/show suggested version=false}
+\\pgfplotsset{filter discard warning=false}
+\pgfplotsset{compat=1.7}
+
+\\begin{axis}[xmin=-5, xmax=35, ymin=-5, ymax=25, axis x line=middle, axis y line=middle, grid=both]
+	\\addplot coordinates{(0,0) (30,0) (30,20) (0,0)};
+\\end{axis}
+\\end{tikzpicture}
+endsnippet
