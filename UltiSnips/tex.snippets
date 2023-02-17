@@ -1,3 +1,16 @@
+global !p
+def math():
+    return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+
+def comment(): 
+    return vim.eval('vimtex#syntax#in_comment()') == '1'
+
+def env(name):
+    [x,y] = vim.eval("vimtex#env#is_inside('" + name + "')") 
+    return x != '0' and x != '0'
+
+endglobal
+
 snippet p
 \\paragraph{}
 endsnippet
@@ -80,7 +93,7 @@ snippet R
 \\mathbb{R}
 endsnippet
 
-
+context "math()"
 snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
 `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
 endsnippet
@@ -92,10 +105,12 @@ snippet beg "begin, end" bA
 \end{$1}
 endsnippet
 
+context "math()"
 snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
 \\frac{`!p snip.rv = match.group(1)`}{$1}$0
 endsnippet
 
+context "math()"
 priority 1000
 snippet '^.*\)/' "() Fraction" wrA
 `!p
@@ -135,7 +150,6 @@ snippet rm "mathrm"
 endsnippet
 
 snippet graph "graph"
-
 \\begin{tikzpicture}
 \\pgfplotsset{compat=newest,compat/show suggested version=false}
 \\pgfplotsset{filter discard warning=false}
@@ -153,4 +167,11 @@ endsnippet
 
 snippet bold "bold"
 \\textbf{$0}
+endsnippet
+
+snippet fig "figure"
+\\begin{figure}[h]
+	\\centering
+	\\includegraphics[scale=1]{images/fig1.pdf}
+\\end{figure}
 endsnippet
