@@ -141,8 +141,6 @@ set termguicolors
 syntax on
 set expandtab
 set nowrap
-inoremap " ""<left>
-inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
