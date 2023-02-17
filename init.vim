@@ -149,6 +149,11 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
+
+setlocal spell
+set spelllang=nl,en_gb
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
 autocmd BufNewFile *.cpp 0r ~/.config/nvim/template.cpp
 autocmd BufNewFile *.tex 0r ~/.config/nvim/template.tex
 
