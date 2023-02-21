@@ -5,6 +5,12 @@
 
 % Node styles
 \tikzstyle{vertex}=[fill=white, draw=black, shape=circle, tikzit shape=circle]
+\tikzstyle{new style 0}=[fill={rgb,255: red,97; green,255; blue,110}, draw=black, shape=circle]
+\tikzstyle{new style 1}=[fill={rgb,255: red,224; green,46; blue,255}, draw=black, shape=circle]
+\tikzstyle{new style 2}=[fill={rgb,255: red,42; green,255; blue,56}, draw=black, shape=rectangle]
+\tikzstyle{new style 3}=[fill=white, draw=black, shape=rectangle]
 
 % Edge styles
 \tikzstyle{edge}=[-]
+\tikzstyle{new edge style 0}=[->]
+\tikzstyle{new edge style 1}=[-, draw={rgb,255: red,26; green,47; blue,182}]
