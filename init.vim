@@ -138,7 +138,7 @@ autocmd BufNewFile *.tex 0r ~/.config/nvim/template.tex
 
 autocmd FileType Makefile set expandtab=0
 
-set makeprg=g++-12\ -std=c++17\ -o\ %:r\ %\
+set makeprg=gcc\ -std=c++17\ -o\ %:r\ %\
 autocmd filetype cpp nnoremap <F9> :w <bar> Make <CR>
 autocmd filetype cpp nnoremap <F10> :vs<bar>:terminal ./%:r<CR>
 autocmd filetype cpp nnoremap <F11> :!./%:r<CR>
