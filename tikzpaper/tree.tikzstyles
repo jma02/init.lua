@@ -13,4 +13,6 @@
 % Edge styles
 \tikzstyle{edge}=[-]
 \tikzstyle{new edge style 0}=[->]
-\tikzstyle{new edge style 1}=[-, draw={rgb,255: red,26; green,47; blue,182}]
+\tikzstyle{new edge style 1}=[-, draw={rgb,255: red,182; green,0; blue,3}]
+\tikzstyle{new edge style 2}=[draw=black, -, fill=none]
+\tikzstyle{new edge style 3}=[-, draw={rgb,255: red,176; green,40; blue,200}, fill={rgb,255: red,248; green,33; blue,255}]
