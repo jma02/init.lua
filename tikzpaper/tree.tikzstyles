@@ -7,12 +7,15 @@
 \tikzstyle{vertex}=[fill=white, draw=black, shape=circle, tikzit shape=circle]
 \tikzstyle{new style 0}=[fill={rgb,255: red,97; green,255; blue,110}, draw=black, shape=circle]
 \tikzstyle{new style 1}=[fill={rgb,255: red,224; green,46; blue,255}, draw=black, shape=circle]
-\tikzstyle{new style 2}=[fill={rgb,255: red,42; green,255; blue,56}, draw=black, shape=rectangle]
+\tikzstyle{new style 2}=[fill={rgb,255: red,51; green,15; blue,255}, draw=black, shape=circle]
 \tikzstyle{new style 3}=[fill=white, draw=black, shape=rectangle]
+\tikzstyle{new style 4}=[fill={rgb,255: red,255; green,247; blue,207}, draw=black, shape=circle]
+\tikzstyle{new style 5}=[fill={rgb,255: red,255; green,34; blue,133}, draw=black, shape=circle]
 
 % Edge styles
 \tikzstyle{edge}=[-]
 \tikzstyle{new edge style 0}=[->]
-\tikzstyle{new edge style 1}=[-, draw={rgb,255: red,182; green,0; blue,3}]
+\tikzstyle{new edge style 1}=[draw={rgb,255: red,182; green,0; blue,3}, ->]
 \tikzstyle{new edge style 2}=[draw=black, -, fill=none]
-\tikzstyle{new edge style 3}=[-, draw={rgb,255: red,176; green,40; blue,200}, fill={rgb,255: red,248; green,33; blue,255}]
+\tikzstyle{new edge style 3}=[-, draw={rgb,255: red,206; green,31; blue,212}, fill=none]
+\tikzstyle{new edge style 4}=[-, draw={rgb,255: red,25; green,225; blue,39}]
