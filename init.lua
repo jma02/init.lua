@@ -15,6 +15,7 @@ require('lualine').setup {
     }
 }
 
+
 require("mason").setup()
 require("mason-lspconfig").setup()
 
@@ -40,6 +41,8 @@ lspconfig.pylsp.setup{
   }
 }
 
+require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})
+
 local cmp = require'cmp'
   cmp.setup({
     snippet = {
@@ -49,14 +52,14 @@ local cmp = require'cmp'
     },
     window = {
       -- completion = cmp.config.window.bordered(),
-      -- documentation = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
@@ -92,6 +95,7 @@ local cmp = require'cmp'
       { name = 'cmdline' }
     })
   })
+  
 
 require('telescope').setup{
     extensions = {
@@ -131,6 +135,7 @@ require('code_runner').setup({
   },
 })
 
+vim.keymap.set('n', '<F9>', ':Telescope file_browser<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<F10>', ':RunFile<CR>', { noremap = true, silent = false })
 
 
