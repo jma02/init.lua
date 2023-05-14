@@ -4,8 +4,10 @@ require('ayu').setup({
     mirage = true, 
 })
 
+-- Theme
 require('ayu').colorscheme()
 
+-- Status Line
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -15,7 +17,7 @@ require('lualine').setup {
     }
 }
 
-
+-- LSP Installer
 require("mason").setup()
 require("mason-lspconfig").setup()
 
@@ -41,6 +43,7 @@ lspconfig.pylsp.setup{
   }
 }
 
+-- Load snippets defined in ./LuaSnip/
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})
 
 local cmp = require'cmp'
@@ -96,7 +99,7 @@ local cmp = require'cmp'
     })
   })
   
-
+-- Fuzzy Finder
 require('telescope').setup{
     extensions = {
         file_browser = {
@@ -118,6 +121,7 @@ require('telescope').setup{
 -- you need to call load_extension, somewhere after setup function:
 require("telescope").load_extension "file_browser"
 
+-- TODO: create executor map (probably won't need more than this)
 require('code_runner').setup({
   -- put here the commands by filetype
   filetype = {
@@ -138,7 +142,13 @@ require('code_runner').setup({
 vim.keymap.set('n', '<F9>', ':Telescope file_browser<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<F10>', ':RunFile<CR>', { noremap = true, silent = false })
 
+--- VimTeX
+vim.g.vimtex_view_method = "skim"
 
+-- This is necessary for VimTeX to load properly. The "indent" is optional.
+vim.cmd('filetype plugin indent on')
+
+-- Vim settings
 vim.opt.relativenumber = true
 vim.opt.cindent = true
 vim.opt.showmatch = true
@@ -155,13 +165,18 @@ vim.api.nvim_set_keymap('i', '{', '{}<left>', { noremap = true })
 vim.api.nvim_set_keymap('i', '{<CR>', '{<CR>}<ESC>O', { noremap = true })
 vim.api.nvim_set_keymap('i', '{;<CR>', '{<CR>};<ESC>O', { noremap = true })
 
---- TODO: turn spellcheck on exclusively for .tex and .md
+-- Turn spellcheck off by default
 vim.opt.spell = false
-vim.opt.spelllang = { 'nl', 'en_gb' }
+
+-- Set spelllang for .tex and .md files
+vim.api.nvim_exec([[
+  autocmd FileType tex,md setlocal spell spelllang=nl,en_gb
+]], false)
+
+-- Map <C-l> to clear and reapply spelling
 vim.api.nvim_set_keymap('i', '<C-l>', '<c-g>u<Esc>[s1z=`]a<c-g>u', { noremap = true })
 
--- This is necessary for VimTeX to load properly. The "indent" is optional.
-vim.cmd('filetype plugin indent on')
+-- Template files
 vim.cmd([[
   autocmd BufNewFile *.cpp 0r ~/.config/nvim/template.cpp
   autocmd BufNewFile *.tex 0r ~/.config/nvim/template.tex
