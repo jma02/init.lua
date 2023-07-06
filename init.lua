@@ -43,7 +43,13 @@ lspconfig.pylsp.setup{
   }
 }
 
-lspconfig.rust_analyzer.setup {}
+lspconfig.rust_analyzer.setup {
+  -- Server-specific settings. See `:help lspconfig-setup`
+  settings = {
+    ['rust-analyzer'] = {},
+  },
+}
+
 -- Load snippets defined in ./LuaSnip/
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})
 
