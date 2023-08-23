@@ -140,7 +140,7 @@ require('code_runner').setup({
     },
     cpp = {
         "cd $dir &&",
-        "g++-13 $fileName -o $fileNameWithoutExt &&",
+        "g++-13 -std=c++20 $fileName -o $fileNameWithoutExt &&",
         "$dir/$fileNameWithoutExt"
     }
   },
