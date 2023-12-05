@@ -20,7 +20,7 @@ ls.add_snippets(tex, {
             namr = "alph",
             dscr = "alphabetically enumerate items",
         }, {
-            t({"\\begin{enumerate}[label=(\\alph*).])", "\t"}),
+            t({"\\begin{enumerate}[label=(\\alph*).]", "\t"}),
             i(1),
             t({"","\\end{enumerate}"})
         }),

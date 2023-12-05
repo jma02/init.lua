@@ -139,7 +139,7 @@ require('code_runner').setup({
       "$dir/$fileNameWithoutExt"
     },
     cpp = {
-        "cd $dir &&",
+        "cd $dir &&", -- g++-13 is brew gcc. change to gcc on unix builds
         "g++-13 -std=c++20 $fileName -o $fileNameWithoutExt &&",
         "$dir/$fileNameWithoutExt"
     }
@@ -151,6 +151,7 @@ vim.keymap.set('n', '<F10>', ':RunFile<CR>', { noremap = true, silent = false })
 
 --- VimTeX
 vim.g.vimtex_view_method = "skim"
+
 
 -- This is necessary for VimTeX to load properly. The "indent" is optional.
 vim.cmd('filetype plugin indent on')
@@ -187,5 +188,6 @@ vim.api.nvim_set_keymap('i', '<C-l>', '<c-g>u<Esc>[s1z=`]a<c-g>u', { noremap = t
 vim.cmd([[
   autocmd BufNewFile *.cpp 0r ~/.config/nvim/template.cpp
   autocmd BufNewFile *.tex 0r ~/.config/nvim/template.tex
+  autocmd BufNewFile *.tex call system('cp ~/.config/nvim/tex/jma.sty .') 
 ]])
 
