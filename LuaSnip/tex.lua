@@ -15,34 +15,7 @@ ls.add_snippets(tex, {
             i(1),
             t("}")
         }),
-        s({
-            trig = "alph",
-            namr = "alph",
-            dscr = "alphabetically enumerate items",
-        }, {
-            t({"\\begin{enumerate}[label=(\\alph*).]", "\t"}),
-            i(1),
-            t({"","\\end{enumerate}"})
-        }),
-        s({
-            trig = "prime",
-            namr = "prime",
-            dscr = "append a single prime",
-        }, {
-            t("^{\\prime}"),
-        }),
-        s({
-            trig = "beg",
-            namr = "begin, end",
-            dscr = "create a begin end environment",
-        }, {
-            t("\\begin{"),
-            i(1),
-            t({"}", "\t"}),
-            t({"", "\\end{"}),
-            i(2),
-            t("}"),
-        }),
+        parse_snippet({ trig = "beg", name = "begin{} / end{}" }, "\\begin{$1}\n\t$0\n\\end{$1}"),
         s({
             trig = "disp",
             namr = "display math",
