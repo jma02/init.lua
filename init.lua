@@ -140,7 +140,7 @@ require('code_runner').setup({
     },
     cpp = {
         "cd $dir &&", -- g++-13 is brew gcc. change to gcc on unix builds
-        "g++-13 -std=c++20 $fileName -o $fileNameWithoutExt &&",
+        "g++-14 -std=c++20 $fileName -o $fileNameWithoutExt &&",
         "$dir/$fileNameWithoutExt"
     }
   },
