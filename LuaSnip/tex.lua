@@ -54,6 +54,16 @@ ls.add_snippets(tex, {
           { t({ "\\begin{equation*}", "\t" }), i(1), t({ "", "\\end{equation*}" }) }
           ),
         s(
+          { trig = "cases", name = "Piecewise Equation" },
+          { 
+            t({ "\\begin{cases}", "\t" }), 
+            i(1), 
+            t(" & "), 
+            i(2), 
+            t({ "\\\\", "\\end{cases}" }) 
+          }
+        ),
+        s(
           { trig = "biggBrack", name = "Bigg Brackets" },
           {
             t("\\bigg["),
