@@ -1,5 +1,5 @@
 require("config.lazy")
-
+require("mason").setup()
 -- LSP Installer
 local lspconfig = require('lspconfig')
 local root_pattern = require('lspconfig/util').root_pattern
