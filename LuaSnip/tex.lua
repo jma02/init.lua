@@ -54,6 +54,19 @@ ls.add_snippets(tex, {
           { t({ "\\begin{equation*}", "\t" }), i(1), t({ "", "\\end{equation*}" }) }
           ),
         s(
+          { trig = "figure", name = "Figure" },
+          {
+            t({"\\begin{figure}",
+            "\t\\centering",
+            "\t\\includegraphics[width=0.5\\linewidth]{"}),
+            i(1), 
+            t({"}",
+            "\t\\caption{}",
+            "\t\\label{}",
+            "\\end{figure}"
+          })}
+          ),
+        s(
           { trig = "cases", name = "Piecewise Equation" },
           { 
             t({ "\\begin{cases}", "\t" }), 

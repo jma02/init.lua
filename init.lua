@@ -1,9 +1,14 @@
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 require("config.lazy")
 require("mason").setup()
+
+-- optionally enable 24-bit colour
+vim.opt.termguicolors = true
 -- LSP Installer
 local lspconfig = require('lspconfig')
 local root_pattern = require('lspconfig/util').root_pattern
-
 lspconfig.clangd.setup{
     cmd = { 'clangd' },
     filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
@@ -22,6 +27,8 @@ lspconfig.pylsp.setup{
     }
   }
 }
+-- empty setup using defaults
+require("nvim-tree").setup()
 
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})
 
@@ -78,10 +85,17 @@ cmp.setup.cmdline(':', {
   })
 })
 
+-- VimTeX
 vim.g.vimtex_view_method = "skim"
 vim.cmd('filetype plugin indent on')
 
 
+-- menu
+vim.keymap.set("n", "<C-t>", function()
+  require("menu").open("default")
+end, {})
+
+-- File Runner
 vim.keymap.set('n', '<F10>', ':RunFile<CR>', { noremap = true, silent = false })
 
 

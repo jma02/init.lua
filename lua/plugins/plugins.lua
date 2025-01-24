@@ -9,7 +9,7 @@ return {
       vim.cmd([[colorscheme ayu-mirage]])
     end,
   },
-
+  { "nvim-tree/nvim-tree.lua"},
 
   {
     "hrsh7th/nvim-cmp",
@@ -90,5 +90,13 @@ return {
     -- mode is `n` by default. For more advanced options, check the section on key mappings
     keys = { "<C-a>", { "<C-x>", mode = "n" } },
   },
+  {
+    "nvzone/typr",
+    dependencies = "nvzone/volt",
+    opts = {},
+    cmd = { "Typr", "TyprStats" },
+	},
+{ "nvzone/volt" , lazy = true },
+{ "nvzone/menu" , lazy = true },
 
 }
