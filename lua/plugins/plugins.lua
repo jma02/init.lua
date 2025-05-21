@@ -99,4 +99,16 @@ return {
 { "nvzone/volt" , lazy = true },
 { "nvzone/menu" , lazy = true },
 
+{
+  "HakonHarnes/img-clip.nvim",
+  event = "VeryLazy",
+  opts = {
+    -- Optional configuration settings
+  },
+  keys = {
+    -- Keybinding to paste image from clipboard
+    { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
+  },
+}
+
 }

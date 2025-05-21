@@ -30,6 +30,7 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
 \newtheorem{exercise}{Exercise}[section]
+\newtheorem*{question}{Question}
 \newtheorem*{note}{Note}
 \newtheorem*{claim}{Claim}
 
@@ -43,15 +44,15 @@
 \newcommand{\CC}{\mathcal{C}}
 \newcommand{\CU}{\mathcal{U}}
 
-\DeclarePairedDelimiter{\pa}{\lparen}{\rparen}
-\DeclarePairedDelimiter{\br}{[}{]}
-\DeclarePairedDelimiter{\cbr}{\{}{\}}
-\DeclarePairedDelimiter{\ang}{\langle}{\rangle}
-\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
-\DeclarePairedDelimiter{\dabs}{\lVert}{\rVert}
+\newcommand{\pa}[1]{\left\lparen#1\right\rparen}
+\newcommand{\br}[1]{\left[#1\right]}
+\newcommand{\cbr}[1]{\left\{#1\right\}}
+\newcommand{\ang}[1]{\left\langle#1\right\rangle}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\dabs}[1]{\left\lVert#1\right\rVert}
 \DeclarePairedDelimiter{\eval}{.}{\rvert}
-\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
-\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
 
 \newcommand{\p}{\partial}
 \newcommand{\dd}{\mathop{}\!\mathrm{d}}
@@ -74,6 +75,8 @@
 \newcommand{\lcm}{\operatorname*{lcm}}
 \newcommand{\argmax}{\operatorname*{arg max}}
 \newcommand{\argmin}{\operatorname*{arg min}}
+
+\newcommand{\esssup}{\operatorname*{ess sup}}
 
 \newcommand{\into}{\hookrightarrow}
 \newcommand{\onto}{\twoheadrightarrow}
@@ -102,12 +105,14 @@
 \newcommand{\ds}{\displaystyle}
 \newcommand{\on}{\operatorname}
 \newcommand{\mc}{\mathcal}
+\newcommand{\mbb}{\mathbb}
 \newcommand{\ol}{\overline}
 \newcommand{\ul}{\underline}
 \newcommand{\nc}{\newcommand}
 \renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 
-\setlength\parindent{0pt}
+\usepackage{booktabs}  % For better table formatting
+
 \usepackage{epigraph}
 
