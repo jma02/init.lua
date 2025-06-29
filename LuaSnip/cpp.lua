@@ -26,7 +26,7 @@ ls.add_snippets(cpp, {
             i(1)
         }),
         s({
-          trig = "vii",
+          trig = "mat",
           namr = "vector<vector<int>>",
         },
         {
