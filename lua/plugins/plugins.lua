@@ -69,7 +69,7 @@ return {
       },
       cpp = {
           "cd $dir &&", -- g++-13 is brew gcc. change to gcc on unix builds
-          "g++-14 -std=c++20 $fileName -o $fileNameWithoutExt &&",
+          "g++-15 -std=c++20 $fileName -o $fileNameWithoutExt &&",
           "$dir/$fileNameWithoutExt"
       }
   },
