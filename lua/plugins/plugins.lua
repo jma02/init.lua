@@ -67,11 +67,14 @@ return {
         "rustc $fileName &&",
         "$dir/$fileNameWithoutExt"
       },
-      cpp = {
-          "cd $dir &&", -- g++-13 is brew gcc. change to gcc on unix builds
-          "g++-15 -std=c++20 $fileName -o $fileNameWithoutExt &&",
-          "$dir/$fileNameWithoutExt"
-      }
+      -- should default to brew installation of g++ on macos, otherwise, g++
+     cpp = {
+      "cd $dir &&",
+      "[[ $(uname) == 'Darwin' ]] && COMPILER=g++-15 || COMPILER=g++ &&",
+      "$COMPILER -std=c++20 $fileName -o $fileNameWithoutExt &&",
+      "$dir/$fileNameWithoutExt"
+    }
+ 
   },
 
   }
