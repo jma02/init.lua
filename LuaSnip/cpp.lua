@@ -26,6 +26,14 @@ ls.add_snippets(cpp, {
             i(1)
         }),
         s({
+          trig = "vii",
+          namr = "vector<vector<int>>",
+        },
+        {
+          t("vector<vector<int>> mat(n, vector<int>(m,0));\n"),
+          i(1)
+        }),
+        s({
             trig = "combo",
             namr = "combinatorics namespace",
             dscr = "Functions for combinatorics (competitive programming)",
