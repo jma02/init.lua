@@ -30,7 +30,7 @@ ls.add_snippets(cpp, {
           namr = "vector<vector<int>>",
         },
         {
-          t("vector<vector<int>> mat(n, vector<int>(m,0));\n"),
+          t("vector<vector<int>> mat(n, vector<int>(m,0));"),
           i(1)
         }),
         s({
